@@ -52,6 +52,7 @@ const addProductToCart = (productId) => {
   console.log(`Adding product with ID: ${productId} to cart`);
 
   let itemInCart = cart.find((product) => product.productId === productId);
+  
 
   if (itemInCart) {
     console.log('Product found in cart. Incrementing quantity');
@@ -76,7 +77,9 @@ const addProductToCart = (productId) => {
 const increaseQuantity = (productId) => {
   let itemInCart = cart.find((product) => product.productId === productId);
 
-  itemInCart.quantity += 1;
+  if (itemInCart) {
+    itemInCart.quantity++;
+}
 };
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
@@ -89,11 +92,11 @@ const decreaseQuantity = (productId) => {
   let itemInCart = cart.find((product) => product.productId === productId);
 
   if (itemInCart) {
-      itemInCart.quantity -= 1;  // decrease the quantity
+      itemInCart.quantity -= 1; 
 
       if (itemInCart.quantity === 0) {
-          // Remove the product from the cart if the quantity is 0
-          cart = cart.filter(product => product.productId !== productId);
+          let index = cart.indexOf(itemInCart);
+          cart.splice(index, 1)
       }
   }
 };
@@ -107,11 +110,9 @@ const decreaseQuantity = (productId) => {
 
 const removeProductFromCart = (productId) => {
   let itemInCart = cart.find((product) => product.productId === productId);
-
-  itemInCart.quantity = 0;
-
-  if (itemInCart === 0) {
-    cart = cart.filter((product) => product.productId !== productId);
+  if (itemInCart) {
+      let index = cart.indexOf(itemInCart);
+      cart.splice(index, 1);
   }
 };
 
