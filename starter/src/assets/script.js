@@ -49,12 +49,16 @@ const cart = [];
 */
 
 const addProductToCart = (productId) => {
-  let item = products.find((product) => product.productId === productId);
+  let itemInCart = products.find((product) => product.productId === productId);
 
-  if (item) {
-    console.log(item);
+  if (itemInCart) {
+    itemInCart.quantity += 1;
   } else {
-    console.log("Product not found!");
+    let productToAdd = products.find((product) => product.productId === productId);
+    
+    if (productToAdd) {
+      cart.push({...productToAdd, quantity: 1})
+    }
   }
 };
 
