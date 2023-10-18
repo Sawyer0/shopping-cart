@@ -10,22 +10,28 @@ const products = [];
    - image: picture of product (url string)
 */
 
-const items = 
-[
-{
-  name: "Lenovo T440",
-  price: 350.00,
-  quantity: 12,
-  productId: 1,
-  image:
-},
-{
-  name: "Lenovo T440",
-  price: 350.00,
-  quantity: 12,
-  productId: 1,
-  image:
-}  
+const items = [
+  {
+    name: "Cherry",
+    price: 350.00,
+    quantity: 12,
+    productId: 1,
+    image: "../../images/cherry.jpg"
+  },
+  {
+    name: "Orange",
+    price: 150.00,
+    quantity: 9,
+    productId: 2,
+    image: "../../images/orange.jpg"
+  },
+  {
+    name: "Strawberry",
+    price: 1450.00,
+    quantity: 5,
+    productId: 2,
+    image: "../../images/strawberry.jpg"
+  },
 ]
 
 /* Images provided in /images folder. All images from Unsplash.com
