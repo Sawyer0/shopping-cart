@@ -54,10 +54,12 @@ const addProductToCart = (productId) => {
   if (itemInCart) {
     itemInCart.quantity += 1;
   } else {
-    let productToAdd = products.find((product) => product.productId === productId);
-    
+    let productToAdd = products.find(
+      (product) => product.productId === productId
+    );
+
     if (productToAdd) {
-      cart.push({...productToAdd, quantity: 1})
+      cart.push({ ...productToAdd, quantity: 1 });
     }
   }
 };
@@ -79,8 +81,17 @@ const increaseQuantity = () => {
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 
+const decreaseQuantity = () => {
+  let itemInCart = products.find((product) => product.productId === productId);
 
+  if (itemInCart) {
+    itemInCart.quantity -= 1;
 
+    if (itemInCart === 0) {
+      cart = cart.filter((product) => product.productId !== productId);
+    }
+  }
+};
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
