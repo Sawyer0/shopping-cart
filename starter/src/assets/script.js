@@ -11,28 +11,26 @@
 const products = [
   {
     name: "Cherry",
-    price: 350.00,
+    price: 350.0,
     quantity: 12,
     productId: 1,
-    image: "../../images/cherry.jpg"
+    image: "../../images/cherry.jpg",
   },
   {
     name: "Orange",
-    price: 150.00,
+    price: 150.0,
     quantity: 9,
     productId: 2,
-    image: "../../images/orange.jpg"
+    image: "../../images/orange.jpg",
   },
   {
     name: "Strawberry",
-    price: 1450.00,
+    price: 1450.0,
     quantity: 5,
-    productId: 2,
-    image: "../../images/strawberry.jpg"
+    productId: 3,
+    image: "../../images/strawberry.jpg",
   },
 ];
-
-
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -51,8 +49,16 @@ const cart = [];
 */
 
 const addProductToCart = (productId) => {
+  let item = products.find((product) => product.productId === productId);
 
-}
+  if (item) {
+    console.log(item);
+  } else {
+    console.log("Product not found!");
+  }
+};
+
+addProductToCart(2)
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
@@ -85,7 +91,6 @@ const addProductToCart = (productId) => {
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
-
 /* The following is for running unit tests. 
    To fully complete this project, it is expected that all tests pass.
    Run the following command in terminal to run tests
@@ -93,15 +98,15 @@ const addProductToCart = (productId) => {
 */
 
 module.exports = {
-   products,
-   cart,
-   addProductToCart,
-   increaseQuantity,
-   decreaseQuantity,
-   removeProductFromCart,
-   cartTotal,
-   pay, 
-   emptyCart,
-   /* Uncomment the following line if completing the currency converter bonus */
-   // currency
-}
+  products,
+  cart,
+  addProductToCart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeProductFromCart,
+  cartTotal,
+  pay,
+  emptyCart,
+  /* Uncomment the following line if completing the currency converter bonus */
+  // currency
+};
