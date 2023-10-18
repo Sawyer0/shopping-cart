@@ -99,6 +99,17 @@ const decreaseQuantity = () => {
   - removeProductFromCart should remove the product from the cart
 */
 
+const removeProductFromCart = (productId) => {
+  let itemInCart = products.find((product) => product.productId === productId);
+
+  itemInCart.quantity = 0;
+
+  if (itemInCart === 0) {
+    cart = cart.filter((product) => product.productId !== productId);
+  }
+}
+
+
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
