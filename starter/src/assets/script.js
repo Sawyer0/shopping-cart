@@ -51,7 +51,7 @@ const cart = [];
 const addProductToCart = (productId) => {
   console.log(`Adding product with ID: ${productId} to cart`);
 
-  let itemInCart = products.find((product) => product.productId === productId);
+  let itemInCart = cart.find((product) => product.productId === productId);
 
   if (itemInCart) {
     console.log('Product found in cart. Incrementing quantity');
@@ -74,7 +74,7 @@ const addProductToCart = (productId) => {
 */
 
 const increaseQuantity = (productId) => {
-  let itemInCart = products.find((product) => product.productId === productId);
+  let itemInCart = cart.find((product) => product.productId === productId);
 
   itemInCart.quantity += 1;
 };
@@ -106,7 +106,7 @@ const decreaseQuantity = (productId) => {
 */
 
 const removeProductFromCart = (productId) => {
-  let itemInCart = products.find((product) => product.productId === productId);
+  let itemInCart = cart.find((product) => product.productId === productId);
 
   itemInCart.quantity = 0;
 
