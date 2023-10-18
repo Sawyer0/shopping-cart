@@ -12,21 +12,21 @@ const products = [
   {
     name: "Cherry",
     price: 350.0,
-    quantity: 12,
+    quantity: 0,
     productId: 1,
     image: "../../images/cherry.jpg",
   },
   {
     name: "Orange",
     price: 150.0,
-    quantity: 9,
+    quantity: 0,
     productId: 2,
     image: "../../images/orange.jpg",
   },
   {
     name: "Strawberry",
     price: 1450.0,
-    quantity: 5,
+    quantity: 0,
     productId: 3,
     image: "../../images/strawberry.jpg",
   },
@@ -42,34 +42,38 @@ const products = [
 
 const cart = [];
 
-/* Create a function named addProductToCart that takes in the product productId as an argument
+/* Create a function named that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
 
 const addProductToCart = (productId) => {
+  console.log(`Adding product with ID: ${productId} to cart`);
+
   let itemInCart = products.find((product) => product.productId === productId);
 
   if (itemInCart) {
+    console.log('Product found in cart. Incrementing quantity');
     itemInCart.quantity += 1;
   } else {
-    let productToAdd = products.find(
-      (product) => product.productId === productId
-    );
+    let productToAdd = products.find((product) => product.productId === productId);
 
     if (productToAdd) {
       cart.push({ ...productToAdd, quantity: 1 });
     }
   }
+
+  console.log('Current cart state:', cart);
 };
+
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
 
-const increaseQuantity = () => {
+const increaseQuantity = (productId) => {
   let itemInCart = products.find((product) => product.productId === productId);
 
   itemInCart.quantity += 1;
@@ -81,17 +85,19 @@ const increaseQuantity = () => {
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 
-const decreaseQuantity = () => {
-  let itemInCart = products.find((product) => product.productId === productId);
+const decreaseQuantity = (productId) => {
+  let itemInCart = cart.find((product) => product.productId === productId);
 
   if (itemInCart) {
-    itemInCart.quantity -= 1;
+      itemInCart.quantity -= 1;  // decrease the quantity
 
-    if (itemInCart === 0) {
-      cart = cart.filter((product) => product.productId !== productId);
-    }
+      if (itemInCart.quantity === 0) {
+          // Remove the product from the cart if the quantity is 0
+          cart = cart.filter(product => product.productId !== productId);
+      }
   }
 };
+
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
