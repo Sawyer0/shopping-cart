@@ -107,13 +107,21 @@ const removeProductFromCart = (productId) => {
   if (itemInCart === 0) {
     cart = cart.filter((product) => product.productId !== productId);
   }
-}
-
+};
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
+
+const cartTotal = () => {
+  let total = 0.0;
+
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price * cart[i].quantity;
+  }
+  return total;
+};
 
 /* Create a function called emptyCart that empties the products from the cart */
 
