@@ -124,13 +124,28 @@ const cartTotal = () => {
 };
 
 /* Create a function called emptyCart that empties the products from the cart */
+
 const emptyCart = () => {
   cart.length = 0;
-}
+};
+
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
+
+const pay = (amount) => {
+  let totalCost = cartTotal();
+  let difference = amount - totalCost;
+
+  if (difference < 0) {
+    return difference;
+  } else if (difference > 0) {
+    return difference;
+  } else {
+    return 0;
+  }
+};
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
