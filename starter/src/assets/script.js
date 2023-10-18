@@ -1,5 +1,6 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
 const products = [];
+
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
    - name: name of product (string)
@@ -8,6 +9,24 @@ const products = [];
    - productId: unique id for the product (number)
    - image: picture of product (url string)
 */
+
+const items = 
+[
+{
+  name: "Lenovo T440",
+  price: 350.00,
+  quantity: 12,
+  productId: 1,
+  image:
+},
+{
+  name: "Lenovo T440",
+  price: 350.00,
+  quantity: 12,
+  productId: 1,
+  image:
+}  
+]
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
