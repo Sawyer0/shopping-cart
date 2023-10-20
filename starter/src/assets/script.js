@@ -14,21 +14,21 @@ const products = [
     price: 350.0,
     quantity: 0,
     productId: 1,
-    image: "../../images/cherry.jpg",
+    image: "./images/cherry.jpg",
   },
   {
     name: "Orange",
     price: 150.0,
     quantity: 0,
     productId: 2,
-    image: "../../images/orange.jpg",
+    image: "./images/orange.jpg",
   },
   {
     name: "Strawberry",
     price: 1450.0,
     quantity: 0,
     productId: 3,
-    image: "../../images/strawberry.jpg",
+    image: "./images/strawberry.jpg",
   },
 ];
 
