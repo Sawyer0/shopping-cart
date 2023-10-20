@@ -133,6 +133,9 @@ const cartTotal = () => {
 /* Create a function called emptyCart that empties the products from the cart */
 
 const emptyCart = () => {
+  for (let i = 0; i <= cart.length; i++) {
+    cart[i].quantity = 0;
+  }
   cart.length = 0;
 };
 
